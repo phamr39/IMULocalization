@@ -33,18 +33,19 @@ class getData():
 
         poll_interval = imu.IMUGetPollInterval()
         print("Recommended Poll Interval: %dmS\n" % poll_interval)
+        return imu
     def getData():
         while True:
+            imu = getData.IMU_init()
             if imu.IMURead():
-                # x, y, z = imu.getFusionData()
-                # print("%f %f %f" % (x,y,z))
-                data = imu.getIMUData()
-                fusionPose = data["fusionPose"]
-                print("r: %f p: %f y: %f" % (math.degrees(fusionPose[0]), 
-                    math.degrees(fusionPose[1]), math.degrees(fusionPose[2])))
-                time.sleep(poll_interval*1.0/1000.0)
+                x, y, z = imu.getFusionData()
+                print("%f %f %f" % (x,y,z))
+                # data = imu.getIMUData()
+                # fusionPose = data["fusionPose"]
+                # print("r: %f p: %f y: %f" % (math.degrees(fusionPose[0]), 
+                #     math.degrees(fusionPose[1]), math.degrees(fusionPose[2])))
+                # time.sleep(poll_interval*1.0/1000.0)
     def run():
-        getData.IMU_init()
         getData.getData()
 if __name__ == "__main__":
     getData.run()
