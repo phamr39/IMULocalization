@@ -34,8 +34,8 @@ class getData():
         print("Recommended Poll Interval: %dmS\n" % poll_interval)
         return imu
     def getData():
+        imu = getData.IMU_init()
         while True:
-            imu = getData.IMU_init()
             if imu.IMURead():
                 x, y, z = imu.getFusionData()
                 print("%f %f %f" % (x,y,z))
