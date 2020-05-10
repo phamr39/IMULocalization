@@ -11,8 +11,7 @@ class getData():
         SETTINGS_FILE = "RTIMULib"
         print("Using settings file " + SETTINGS_FILE + ".ini")
         if not os.path.exists(SETTINGS_FILE + ".ini"):
-        print("Settings file does not exist, will be created")
-
+            print("Settings file does not exist, will be created")
         s = RTIMU.Settings(SETTINGS_FILE)
         imu = RTIMU.RTIMU(s)
 
