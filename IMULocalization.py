@@ -242,6 +242,7 @@ class getData():
                 file_.write(',')
                 file_.write(str(y))
                 file_.write('\n')
+                time.sleep(1)
         file_.close()
                 # data = imu.getIMUData()
                 # fusionPose = data["fusionPose"]
