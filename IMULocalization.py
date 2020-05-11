@@ -6,6 +6,7 @@ import os.path
 import time
 import math
 import serial
+import os
 class Tools:
     def SeprateData(data):
         print("Hello World!\n")
@@ -251,5 +252,5 @@ class getData():
         getData.getData()
 if __name__ == "__main__":
     # getData.run()
-    thr_send = threading.Thread(name = 'Send_data', target = CommUART.UARTSend())
+    # thr_send = threading.Thread(name = 'Send_data', target = CommUART.UARTSend())
     thr_get_location = threading.Thread(name = 'Get_pos',target= getData.getData())
