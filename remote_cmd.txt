@@ -1,0 +1,4 @@
+sudo /usr/local/bin/mything.sh
+sudo /usr/local/bin/git_commit.sh
+ls /home/swarmrobotic/swr/SWR_Communication
+sudo python3 Communication.py

@@ -1,0 +1,24 @@
+b'\x02'
+----
+b'+'
+----
+b'1'
+----
+b'0'
+----
+b'.'
+----
+b'2'
+----
+b'5'
+----
+b'\x03'
+----
+
+swarmrobotic@swarmrobotic-desktop:~$ sudo systemctl status mything.service
+● mything.service - mything: do my own thing
+   Loaded: loaded (/etc/systemd/system/mything.service; enabled; vendor preset: 
+   Active: activating (auto-restart) (Result: exit-code) since Thu 2020-04-02 16
+  Process: 8036 ExecStart=/usr/local/bin/mything.sh (code=exited, status=203/EXE
+ Main PID: 8036 (code=exited, status=203/EXEC)
+
