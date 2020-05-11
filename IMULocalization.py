@@ -231,16 +231,16 @@ class getData():
         return imu
     def getData():
         imu = getData.IMU_init()
-        file_ = open("position.txt", "a")
+        file_ = open("position.txt", "w")
         while True:
             if imu.IMURead():
                 x, y, z = imu.getFusionData()
                 print("%f %f %f" % (x,y,z))
                 print('x: ',x)
                 print('y: ',y)
-                file_.write(x)
+                file_.write(str(x))
                 file_.write(',')
-                file_.write(y)
+                file_.write(str(y))
                 file_.write('\n')
         file_.close()
                 # data = imu.getIMUData()
