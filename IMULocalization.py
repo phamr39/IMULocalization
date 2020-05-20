@@ -203,6 +203,18 @@ class CommUART:
         while(1):
             CommUART.UARTReceive()
 class getData():
+   # def __init__(self,t):
+        #self t=t
+    def filter(mea):
+        #predict
+        _x=_x
+        _p=_p+_q
+        #update
+        _k=_p/(_p+0.005)
+        _x=_x+_k*(mea-_x)
+        _p=(1-_k)*_p
+        return _x
+        
     def IMU_init():
         SETTINGS_FILE = "RTIMULib"
         print("Using settings file " + SETTINGS_FILE + ".ini")
@@ -210,6 +222,10 @@ class getData():
             print("Settings file does not exist, will be created")
         s = RTIMU.Settings(SETTINGS_FILE)
         imu = RTIMU.RTIMU(s)
+        print("front connect")
+        if imu.IMURead():
+            print ("Connected ---")
+        print("Back connect")
 
         print("IMU Name: " + imu.IMUName())
 
@@ -228,30 +244,40 @@ class getData():
 
         poll_interval = imu.IMUGetPollInterval()
         print("Recommended Poll Interval: %dmS\n" % poll_interval)
-        return imu
-    def getData():
-        imu = getData.IMU_init()
-        file_ = open("position.txt", "w")
+        #return imu
+    #def getData():
+        #imu=getData.IMU_init()
+        t=100
+        file_ = open("position.txt","w")
         while True:
             if imu.IMURead():
+                #print("Phan Hong Son")
                 x, y, z = imu.getFusionData()
-                print("%f %f %f" % (x,y,z))
+                #print("%f %f %f" % (x,y,z))
+                #print(getData.filter(x))
                 print('x: ',x)
                 print('y: ',y)
+                file_.write("x= ")
                 file_.write(str(x))
-                file_.write(',')
+                print("passed")
+                file_.write('||')
+                file_.write("y= ")
                 file_.write(str(y))
                 file_.write('\n')
-                time.sleep(1)
+                time.sleep(0.5)
+                t=t-1
+                if(t==0):
+                    break
         file_.close()
-                # data = imu.getIMUData()
-                # fusionPose = data["fusionPose"]
-                # print("r: %f p: %f y: %f" % (math.degrees(fusionPose[0]), 
-                #     math.degrees(fusionPose[1]), math.degrees(fusionPose[2])))
-                # time.sleep(poll_interval*1.0/1000.0)
+                #data = imu.getIMUData()
+                #fusionPose = data["fusionPose"]
+                #print("r: %f p: %f y: %f" % (math.degrees(fusionPose[0]), math.degrees(fusionPose[1]), math.degrees(fusionPose[2])))
+                #time.sleep(poll_interval*1.0/1000.0)
+                
     def run():
-        getData.getData()
+        #getData.getData()
+        getData.IMU_init()
 if __name__ == "__main__":
-    # getData.run()
-    # thr_send = threading.Thread(name = 'Send_data', target = CommUART.UARTSend())
-    thr_get_location = threading.Thread(name = 'Get_pos',target= getData.getData())
+    getData.run()
+    #thr_send = threading.Thread(name = 'Send_data', target = CommUART.UARTSend())
+    #thr_get_location = threading.Thread(name = 'Get_pos',target= getData.getData())
