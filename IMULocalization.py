@@ -186,9 +186,9 @@ class CommUART:
             parity=serial.PARITY_NONE,
             stopbits=serial.STOPBITS_ONE,
         )
+        pre_traj = []
+        p_traj = []
         while(1):
-            pre_traj = []
-            p_traj = []
             try:
                 p_traj = Tools.ReadFile('/home/swarm-robotics/path_planning/data/waypoint.txt')
                 # trajectory_changed = random.randint(0,1)
