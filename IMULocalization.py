@@ -194,9 +194,11 @@ class CommUART:
             print("11111111111111")
             if (p_traj.difference(pre_traj) != ''):
                 n = 'S'
+                print('2222222222222222')
                 for kjh in range(0,10):
                     serial_port.write(n.encode())
                 CommUART.UARTSend(p_traj)
+                print('3333333333333333')
             pre_traj = p_traj
         except:
             print("No new trajectory detected ")
