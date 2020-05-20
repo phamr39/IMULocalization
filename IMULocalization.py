@@ -253,7 +253,7 @@ class getData():
         #return imu
     #def getData():
         #imu=getData.IMU_init()
-        #t=100
+        t=10
         file_ = open("position.txt","w")
         while True:
             if imu.IMURead():
@@ -270,11 +270,11 @@ class getData():
                 file_.write("y= ")
                 file_.write(str(y))
                 file_.write('\n')
-                time.sleep(0.5)
+                time.sleep(1)
                 #time.sleep(poll_interval*1.0/1000.0)
-                #t=t-1
-                #if(t==0):
-                  #  break
+                t=t-1
+                if(t==0):
+                    break
         file_.close()
                 #data = imu.getIMUData()
                 #fusionPose = data["fusionPose"]
