@@ -192,6 +192,8 @@ class CommUART:
         try:
             # trajectory_changed = random.randint(0,1)
             print("11111111111111")
+            print(pre_traj)
+            print(p_traj)
             if (p_traj.difference(pre_traj) != ''):
                 n = 'S'
                 print('2222222222222222')
