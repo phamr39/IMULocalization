@@ -189,7 +189,7 @@ class CommUART:
         while(1):
             pre_traj = []
             p_traj = []
-            p_traj = Tools.ReadFile('test_trajectory.txt')
+            p_traj = Tools.ReadFile('/home/swarm-robotics/path_planning/data/waypoint.txt')
             # trajectory_changed = random.randint(0,1)
             if (p_traj.difference(pre_traj) != ''):
                 n = 'S'
@@ -278,6 +278,7 @@ class getData():
         #getData.getData()
         getData.IMU_init()
 if __name__ == "__main__":
-    getData.run()
+    # getData.run()
+    CommUART.run()
     #thr_send = threading.Thread(name = 'Send_data', target = CommUART.UARTSend())
     #thr_get_location = threading.Thread(name = 'Get_pos',target= getData.getData())
