@@ -284,7 +284,7 @@ class getData():
         #getData.getData()
         getData.IMU_init()
 if __name__ == "__main__":
-    # getData.run()
-    CommUART.run()
+    getData.run()
+    # CommUART.run()
     #thr_send = threading.Thread(name = 'Send_data', target = CommUART.UARTSend())
     #thr_get_location = threading.Thread(name = 'Get_pos',target= getData.getData())
