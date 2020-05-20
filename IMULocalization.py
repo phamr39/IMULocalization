@@ -264,7 +264,7 @@ class getData():
                 print('x: ',x)
                 print('y: ',y)
                 #file_.write("x= ")
-                file_.write(str(x))
+                #file_.write(str(x))
                # print("passed")
                # file_.write(',')
                # file_.write("y= ")
