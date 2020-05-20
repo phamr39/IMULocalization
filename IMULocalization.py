@@ -271,7 +271,7 @@ class getData():
                 file_.write(str(y))
                 file_.write('\n')
                 time.sleep(0.5)
-                t=t-1
+                #t=t-1
                 #if(t==0):
                   #  break
         file_.close()
