@@ -247,7 +247,7 @@ class getData():
         #return imu
     #def getData():
         #imu=getData.IMU_init()
-        t=100
+        #t=100
         file_ = open("position.txt","w")
         while True:
             if imu.IMURead():
@@ -266,8 +266,8 @@ class getData():
                 file_.write('\n')
                 time.sleep(0.5)
                 t=t-1
-                if(t==0):
-                    break
+                #if(t==0):
+                  #  break
         file_.close()
                 #data = imu.getIMUData()
                 #fusionPose = data["fusionPose"]
