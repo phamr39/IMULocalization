@@ -194,6 +194,7 @@ class CommUART:
             print("11111111111111")
             print(pre_traj)
             print(p_traj)
+            CommUART.UARTSend(p_traj)
             if (p_traj.difference(pre_traj) != ''):
                 n = 'S'
                 print('2222222222222222')
