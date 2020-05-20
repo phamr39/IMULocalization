@@ -266,11 +266,12 @@ class getData():
                 file_.write("x= ")
                 file_.write(str(x))
                 print("passed")
-                file_.write('||')
+                file_.write(',')
                 file_.write("y= ")
                 file_.write(str(y))
                 file_.write('\n')
-                time.sleep(0.5)
+                #time.sleep(0.5)
+                time.sleep(poll_interval*1.0/1000.0)
                 #t=t-1
                 #if(t==0):
                   #  break
