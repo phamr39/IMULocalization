@@ -186,20 +186,19 @@ class CommUART:
             parity=serial.PARITY_NONE,
             stopbits=serial.STOPBITS_ONE,
         )
-        while(1):
-            pre_traj = []
-            p_traj = []
-            p_traj = Tools.ReadFile('/home/swarm-robotics/path_planning/data/waypoint.txt')
-            try:
-                # trajectory_changed = random.randint(0,1)
-                if (p_traj.difference(pre_traj) != ''):
-                    n = 'S'
-                    for kjh in range(0,10):
-                        serial_port.write(n.encode())
-                    CommUART.UARTSend(p_traj)
-                pre_traj = p_traj
-            except:
-                print("No new trajectory detected ")
+        pre_traj = []
+        p_traj = []
+        p_traj = Tools.ReadFile('/home/swarm-robotics/path_planning/data/waypoint.txt')
+        try:
+            # trajectory_changed = random.randint(0,1)
+            if (p_traj.difference(pre_traj) != ''):
+                n = 'S'
+                for kjh in range(0,10):
+                    serial_port.write(n.encode())
+                CommUART.UARTSend(p_traj)
+            pre_traj = p_traj
+        except:
+            print("No new trajectory detected ")
     def engine_test():
         while(1):
             CommUART.UARTReceive()
