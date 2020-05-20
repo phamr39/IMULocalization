@@ -189,7 +189,7 @@ class CommUART:
         pre_traj = []
         p_traj = []
         p_traj = Tools.ReadFile('/home/swarm-robotics/path_planning/data/waypoint.txt')
-        while(1):
+        while(p_traj.difference(pre_traj) != ''):
             p_traj = Tools.ReadFile('/home/swarm-robotics/path_planning/data/waypoint.txt')
             try:
                 # trajectory_changed = random.randint(0,1)
