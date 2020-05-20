@@ -187,9 +187,9 @@ class CommUART:
             stopbits=serial.STOPBITS_ONE,
         )
         while(1):
+            pre_traj = []
+            p_traj = []
             try:
-                pre_traj = []
-                p_traj = []
                 p_traj = Tools.ReadFile('/home/swarm-robotics/path_planning/data/waypoint.txt')
                 # trajectory_changed = random.randint(0,1)
                 if (p_traj.difference(pre_traj) != ''):
