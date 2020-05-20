@@ -254,7 +254,7 @@ class getData():
     #def getData():
         #imu=getData.IMU_init()
         #t=100
-        #file_ = open("position.txt","w")
+        file_ = open("position.txt","w")
         while True:
             if imu.IMURead():
                 #print("Phan Hong Son")
@@ -263,19 +263,19 @@ class getData():
                 #print(getData.filter(x))
                 print('x: ',x)
                 print('y: ',y)
-                #file_.write("x= ")
-                #file_.write(str(x))
-               # print("passed")
-               # file_.write(',')
-               # file_.write("y= ")
-               # file_.write(str(y))
-               # file_.write('\n')
-                #time.sleep(0.5)
-                time.sleep(poll_interval*1.0/1000.0)
+                file_.write("x= ")
+                file_.write(str(x))
+                print("passed")
+                file_.write(',')
+                file_.write("y= ")
+                file_.write(str(y))
+                file_.write('\n')
+                time.sleep(0.5)
+                #time.sleep(poll_interval*1.0/1000.0)
                 #t=t-1
                 #if(t==0):
                   #  break
-        #file_.close()
+        file_.close()
                 #data = imu.getIMUData()
                 #fusionPose = data["fusionPose"]
                 #print("r: %f p: %f y: %f" % (math.degrees(fusionPose[0]), math.degrees(fusionPose[1]), math.degrees(fusionPose[2])))
