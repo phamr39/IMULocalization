@@ -195,24 +195,21 @@ class CommUART:
             print(pre_traj)
             print(p_traj)
             #CommUART.UARTSend(p_traj)
-            if (list(set(p_traj) - set(pre_traj))!=[]):
+            if (p_traj.difference(pre_traj) != ''):
                 #n = 'S'
                 print('2222222222222222')
                 #for kjh in range(0,10):
                     #serial_port.write(n.encode())
                 CommUART.UARTSend(p_traj)
                 print('3333333333333333')
-                pre_traj = p_traj
-                n = 'S'
-               # serial_port.write(n.encode())
+            	pre_traj = p_traj
             else:
                 print("No new trajectory dectected")
                 n = 'S'
-                #serial_port.write(n.encode())
+                serial_port.write(n.encode())
         except:
             print("No new trajectory detected ")
-            n = 'S'
-            #serial_port.write(n.encode())
+            n = '
     def engine_test():
         while(1):
             CommUART.UARTReceive()
@@ -292,7 +289,6 @@ class getData():
     def run():
         #getData.getData()
         #getData.IMU_init()
-        print('adf')
 if __name__ == "__main__":
     #getData.run()
     CommUART.run()
