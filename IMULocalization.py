@@ -21,6 +21,7 @@ class Tools:
         p_traj = []
         ls_x = []
         ls_y = []
+        pre_phi = 0
         pre_x = 0
         pre_y = 0
         file_ = open(path,"r")
@@ -34,10 +35,11 @@ class Tools:
             except:
                 continue
         for k in range(0,len(ls_x)):
-            phi = math.atan2(ls_y[k]-pre_y,ls_x[k]-pre_x)
+            phi = math.atan2(ls_y[k]-pre_y,ls_x[k]-pre_x) - pre_phi
             dis = math.sqrt(pow(ls_y[k]-pre_y,2) + pow(ls_x[k]-pre_x,2))
             pre_x = ls_x[k]
             pre_y = ls_y[k]
+            pre_phi = phi
             p_traj.append(round(dis,1))
             p_traj.append(round(phi,1))
         print(p_traj)
