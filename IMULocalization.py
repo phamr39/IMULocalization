@@ -19,16 +19,27 @@ class Tools:
         return count
     def ReadFile(path = ''):
         p_traj = []
+        ls_x = []
+        ls_y = []
+        pre_x = 0
+        pre_y = 0
         file_ = open(path,"r")
         lines = file_.readlines()
         for line in lines:
             try:
                 x = float(line.split(',')[0])
                 y = float(line.split(',')[1])
-                p_traj.append(x)
-                p_traj.append(y)
+                ls_x.append(x)
+                ls_y.append(y)
             except:
                 continue
+        for k in range(0,len(ls_x)):
+            phi = math.atan2(ls_y[k]-pre_y,ls_x[k]-pre_x)
+            dis = math.sqrt(pow(ls_y[k]-pre_y,2) + pow(ls_x[k]-pre_x,2))
+            pre_x = ls_x[k]
+            pre_y = ls_y[k]
+            p_traj.append(round(dis,1))
+            p_traj.append(round(phi,1))
         print(p_traj)
         return p_traj
     def ConvertToRobotCoor():
@@ -224,7 +235,7 @@ class CommUART:
                     #     serial_port.write(n.encode())
                     CommUART.UARTSend(p_traj)
                     print('3333333333333333')
-                pre_traj = p_traj
+                    pre_traj = p_traj
                 else:
                     print("No new trajectory detected ")
                     n = 'S'
@@ -315,5 +326,6 @@ class getData():
 if __name__ == "__main__":
     #getData.run()
     CommUART.run()
+    # Tools.ReadFile('test_trajectory.txt')
     #thr_send = threading.Thread(name = 'Send_data', target = CommUART.UARTSend())
     #thr_get_location = threading.Thread(name = 'Get_pos',target= getData.getData())
