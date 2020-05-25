@@ -40,8 +40,10 @@ class Tools:
             pre_x = ls_x[k]
             pre_y = ls_y[k]
             pre_phi = phi
-            p_traj.append(round(dis,1))
-            p_traj.append(round(phi,1))
+            if (round(phi,1) == 0.9):
+                phi = phi - 0.1
+            p_traj.append(round(ls_x[k],1))
+            p_traj.append(round(ls_y[k],1))
         print(p_traj)
         return p_traj
     def ConvertToRobotCoor():
