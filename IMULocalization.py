@@ -335,7 +335,7 @@ class getData():
                 # file_.write("y= ")
                 # file_.write(str(y))
                 # file_.write('\n')
-                #time.sleep(1)
+                time.sleep(1)
         file_.close()
                 
     def run():
