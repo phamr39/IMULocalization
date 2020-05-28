@@ -308,10 +308,6 @@ class getData():
 
         poll_interval = imu.IMUGetPollInterval()
         print("Recommended Poll Interval: %dmS\n" % poll_interval)
-        #return imu
-    #def getData():
-        #imu=getData.IMU_init()
-        t=10
         file_ = open("position.txt","w")
         while True:
             if imu.IMURead():
@@ -319,6 +315,9 @@ class getData():
                 x, y, z = imu.getFusionData()
                 #print("%f %f %f" % (x,y,z))
                 #print(getData.filter(x))
+                # Noise remove 
+                x = x + 0.013
+                y = y - 0.053
                 print('x: ',x)
                 print('y: ',y)
                 file_.write("x= ")
@@ -329,15 +328,7 @@ class getData():
                 file_.write(str(y))
                 file_.write('\n')
                 time.sleep(1)
-                #time.sleep(poll_interval*1.0/1000.0)
-                t=t-1
-                if(t==0):
-                    break
         file_.close()
-                #data = imu.getIMUData()
-                #fusionPose = data["fusionPose"]
-                #print("r: %f p: %f y: %f" % (math.degrees(fusionPose[0]), math.degrees(fusionPose[1]), math.degrees(fusionPose[2])))
-                #time.sleep(poll_interval*1.0/1000.0)
                 
     def run():
         #getData.getData()
