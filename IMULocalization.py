@@ -325,6 +325,9 @@ class getData():
 
                 pose = imu_data['fusionPose']
                 print(pose)
+                x = pose[0] + 0.021
+                y = pose[1] - 0.059
+                print(x,y)
                 # file_.write("x= ")
                 # file_.write(str(x))
                 # print("passed")
