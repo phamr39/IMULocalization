@@ -317,8 +317,8 @@ class getData():
                 a = imu_data['accel']
                 # print(type(ax))
                 print('ax = ',a[0])
-                print('ay = ',a[1])
-                print('az = ',a[2])
+                # print('ay = ',a[1])
+                # print('az = ',a[2])
                 #print("%f %f %f" % (x,y,z))
                 #print(getData.filter(x))
                 # Noise remove 
