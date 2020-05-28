@@ -312,22 +312,24 @@ class getData():
         while True:
             if imu.IMURead():
                 #print("Phan Hong Son")
-                ls = imu.getIMUData()
-                print(ls)
+                imu_data = imu.getIMUData()
+                print(imu_data)
+                ax = imu_data.accel()
+                print(ax)
                 #print("%f %f %f" % (x,y,z))
                 #print(getData.filter(x))
                 # Noise remove 
-                x = x + 0.013
-                y = y - 0.053
-                print('x: ',x)
-                print('y: ',y)
-                file_.write("x= ")
-                file_.write(str(x))
-                print("passed")
-                file_.write(',')
-                file_.write("y= ")
-                file_.write(str(y))
-                file_.write('\n')
+                # x = x + 0.013
+                # y = y - 0.053
+                # print('x: ',x)
+                # print('y: ',y)
+                # file_.write("x= ")
+                # file_.write(str(x))
+                # print("passed")
+                # file_.write(',')
+                # file_.write("y= ")
+                # file_.write(str(y))
+                # file_.write('\n')
                 time.sleep(1)
         file_.close()
                 
