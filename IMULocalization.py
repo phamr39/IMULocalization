@@ -316,7 +316,7 @@ class getData():
                 # print(imu_data)
                 a = imu_data['accel']
                 # print(type(ax))
-                print('ax = ',a[0])
+                print('ax = ',getData.filter(a[0]))
                 # print('ay = ',a[1])
                 # print('az = ',a[2])
                 #print("%f %f %f" % (x,y,z))
