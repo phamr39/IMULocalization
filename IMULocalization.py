@@ -324,7 +324,7 @@ class getData():
                 # Noise remove 
 
                 pose = imu_data['fusionPose']
-                print(pose)
+                # print(pose)
                 x = pose[0] + 0.021
                 y = pose[1] - 0.059
                 print(x,y)
