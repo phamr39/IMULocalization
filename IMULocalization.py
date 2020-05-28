@@ -314,9 +314,11 @@ class getData():
                 #print("Phan Hong Son")
                 imu_data = imu.getIMUData()
                 # print(imu_data)
-                ax = imu_data['accel']
-                print(type(ax))
-                print(ax)
+                a = imu_data['accel']
+                # print(type(ax))
+                print('ax = ',a[0])
+                print('ay = ',a[1])
+                print('az = ',a[2])
                 #print("%f %f %f" % (x,y,z))
                 #print(getData.filter(x))
                 # Noise remove 
@@ -331,7 +333,7 @@ class getData():
                 # file_.write("y= ")
                 # file_.write(str(y))
                 # file_.write('\n')
-                time.sleep(1)
+                #time.sleep(1)
         file_.close()
                 
     def run():
