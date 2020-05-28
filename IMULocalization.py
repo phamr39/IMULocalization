@@ -312,7 +312,7 @@ class getData():
         while True:
             if imu.IMURead():
                 #print("Phan Hong Son")
-                x, y, z = imu.getFusionData()
+                x, y, z = imu.getIMUData()
                 #print("%f %f %f" % (x,y,z))
                 #print(getData.filter(x))
                 # Noise remove 
