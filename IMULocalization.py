@@ -314,20 +314,20 @@ class getData():
                 #print("Phan Hong Son")
                 imu_data = imu.getIMUData()
                 # print(imu_data)
-                # a = imu_data['accel']
+                 a = imu_data['accel']
                 # print(type(ax))
-                # print('ax = ',a[0])
+                 print('ax = ',a[0])
                 # print('ay = ',a[1])
                 # print('az = ',a[2])
                 #print("%f %f %f" % (x,y,z))
                 #print(getData.filter(x))
                 # Noise remove 
 
-                pose = imu_data['fusionPose']
+                # pose = imu_data['fusionPose']
                 # print(pose)
-                x = pose[0] + 0.021
-                y = pose[1] - 0.059
-                print(x,y)
+                # x = pose[0] + 0.021
+                # y = pose[1] - 0.059
+                # print(x,y)
                 # file_.write("x= ")
                 # file_.write(str(x))
                 # print("passed")
@@ -335,7 +335,7 @@ class getData():
                 # file_.write("y= ")
                 # file_.write(str(y))
                 # file_.write('\n')
-                time.sleep(1)
+                # time.sleep(1)
         file_.close()
                 
     def run():
