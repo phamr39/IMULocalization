@@ -314,7 +314,7 @@ class getData():
                 #print("Phan Hong Son")
                 imu_data = imu.getIMUData()
                 print(imu_data)
-                ax = imu_data.accel()
+                ax = imu_data['accel']
                 print(ax)
                 #print("%f %f %f" % (x,y,z))
                 #print(getData.filter(x))
