@@ -314,18 +314,17 @@ class getData():
                 #print("Phan Hong Son")
                 imu_data = imu.getIMUData()
                 # print(imu_data)
-                a = imu_data['accel']
+                # a = imu_data['accel']
                 # print(type(ax))
-                print('ax = ',getData.filter(a[0]))
+                # print('ax = ',a[0])
                 # print('ay = ',a[1])
                 # print('az = ',a[2])
                 #print("%f %f %f" % (x,y,z))
                 #print(getData.filter(x))
                 # Noise remove 
-                # x = x + 0.013
-                # y = y - 0.053
-                # print('x: ',x)
-                # print('y: ',y)
+
+                pose = imu_data['fusionPose']
+                print(pose)
                 # file_.write("x= ")
                 # file_.write(str(x))
                 # print("passed")
