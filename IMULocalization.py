@@ -206,12 +206,12 @@ class CommUART:
         p_traj = Tools.ReadFile('/home/swarm-robotics/path_planning/data/waypoint.txt')
         try:
             # trajectory_changed = random.randint(0,1)
-            print("11111111111111")
-            print(pre_traj)
-            print(p_traj)
+            # print("11111111111111")
             #CommUART.UARTSend(p_traj)
             if (list(set(p_traj) - set(pre_traj))!=[]):
                 #n = 'S'
+                print(pre_traj)
+                print(p_traj)
                 print('2222222222222222')
                 #for kjh in range(0,10):
                     #serial_port.write(n.encode())
@@ -345,7 +345,7 @@ class getData():
 if __name__ == "__main__":
     # getData.run()
     CommUART.run()
-    getData.run()
+    # getData.run()
     # CommUART.run()
     # Tools.ReadFile('test_trajectory.txt')
     #thr_send = threading.Thread(name = 'Send_data', target = CommUART.UARTSend())
