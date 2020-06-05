@@ -44,7 +44,7 @@ class Tools:
                 phi = phi - 0.1
             p_traj.append(round(ls_x[k],1))
             p_traj.append(round(ls_y[k],1))
-        print(p_traj)
+        # print(p_traj)
         return p_traj
     def ConvertToRobotCoor():
         xgs_abs = [0,0,1,1,0,0]
