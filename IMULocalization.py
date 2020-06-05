@@ -344,8 +344,8 @@ class getData():
         #getData.IMU_init()
         print('adf')
 if __name__ == "__main__":
-    #getData.run()
-    CommUART.run()
+    getData.run()
+    # CommUART.run()
     # Tools.ReadFile('test_trajectory.txt')
     #thr_send = threading.Thread(name = 'Send_data', target = CommUART.UARTSend())
     #thr_get_location = threading.Thread(name = 'Get_pos',target= getData.getData())
