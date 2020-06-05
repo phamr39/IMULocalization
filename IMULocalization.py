@@ -308,44 +308,45 @@ class getData():
 
         poll_interval = imu.IMUGetPollInterval()
         print("Recommended Poll Interval: %dmS\n" % poll_interval)
-        #return imu
-    #def getData():
-        #imu=getData.IMU_init()
-        t=10
         file_ = open("position.txt","w")
         while True:
             if imu.IMURead():
                 #print("Phan Hong Son")
-                x, y, z = imu.getFusionData()
+                imu_data = imu.getIMUData()
+                # print(imu_data)
+                a = imu_data['accel']
+                # print(type(ax))
+                print('ax = ',a[0])
+                # print('ay = ',a[1])
+                # print('az = ',a[2])
                 #print("%f %f %f" % (x,y,z))
                 #print(getData.filter(x))
-                print('x: ',x)
-                print('y: ',y)
-                file_.write("x= ")
-                file_.write(str(x))
-                print("passed")
-                file_.write(',')
-                file_.write("y= ")
-                file_.write(str(y))
-                file_.write('\n')
-                time.sleep(1)
-                #time.sleep(poll_interval*1.0/1000.0)
-                t=t-1
-                if(t==0):
-                    break
+                # Noise remove 
+
+                # pose = imu_data['fusionPose']
+                # print(pose)
+                # x = pose[0] + 0.021
+                # y = pose[1] - 0.059
+                # print(x,y)
+                # file_.write("x= ")
+                # file_.write(str(x))
+                # print("passed")
+                # file_.write(',')
+                # file_.write("y= ")
+                # file_.write(str(y))
+                # file_.write('\n')
+                # time.sleep(1)
         file_.close()
-                #data = imu.getIMUData()
-                #fusionPose = data["fusionPose"]
-                #print("r: %f p: %f y: %f" % (math.degrees(fusionPose[0]), math.degrees(fusionPose[1]), math.degrees(fusionPose[2])))
-                #time.sleep(poll_interval*1.0/1000.0)
                 
     def run():
         #getData.getData()
-        #getData.IMU_init()
-        print('adf')
+        getData.IMU_init()
+        # print('adf')
 if __name__ == "__main__":
     # getData.run()
     CommUART.run()
+    getData.run()
+    # CommUART.run()
     # Tools.ReadFile('test_trajectory.txt')
     #thr_send = threading.Thread(name = 'Send_data', target = CommUART.UARTSend())
     #thr_get_location = threading.Thread(name = 'Get_pos',target= getData.getData())
