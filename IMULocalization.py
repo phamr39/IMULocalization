@@ -204,59 +204,10 @@ class CommUART:
         pre_traj = []
         p_traj = []
         p_traj = Tools.ReadFile('/home/swarm-robotics/path_planning/data/waypoint.txt')
-        try:
-            # trajectory_changed = random.randint(0,1)
-            # print("11111111111111")
-            #CommUART.UARTSend(p_traj)
-            if (list(set(p_traj) - set(pre_traj))!=[]):
-                #n = 'S'
-                print(pre_traj)
-                print(p_traj)
-                print('2222222222222222')
-                #for kjh in range(0,10):
-                    #serial_port.write(n.encode())
-                CommUART.UARTSend(p_traj)
-                print('3333333333333333')
-                pre_traj = p_traj
-            else:
-                print("No new trajectory dectected")
-                n = 'S'
-                #serial_port.write(n.encode())
-        except:
-            print("No new trajectory detected ")
-            n = 'S'
-            #serial_port.write(n.encode())
         while(1):
-            # try:
-            #     # trajectory_changed = random.randint(0,1)
-            #     print(pre_traj)
-            #     print(p_traj)
-            #     # CommUART.UARTSend(p_traj)
-            #     if (list(set(p_traj) - set(pre_traj)) != []):
-            #         # n = 'S'
-            #         print('2222222222222222')
-            #         # for kjh in range(0,10):
-            #         #     serial_port.write(n.encode())
-            #         CommUART.UARTSend(p_traj)
-            #         print('3333333333333333')
-            #         pre_traj = p_traj
-            #     else:
-            #         print("No new trajectory detected ")
-            #         n = 'S'
-            #         serial_port.write(n.encode())
-            # except:
-            #     print("No new trajectory detected ")
-            #     n = 'S'
-            #     serial_port.write(n.encode())
-            
-            print(pre_traj)
-            print(p_traj)
             # CommUART.UARTSend(p_traj)
             if (list(set(p_traj) - set(pre_traj)) != []):
-                # n = 'S'
-                print('2222222222222222')
-                # for kjh in range(0,10):
-                #     serial_port.write(n.encode())
+                print(p_traj)
                 CommUART.UARTSend(p_traj)
                 print('3333333333333333')
                 pre_traj = p_traj
