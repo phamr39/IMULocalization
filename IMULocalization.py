@@ -30,20 +30,22 @@ class Tools:
             try:
                 x = float(line.split(',')[0])
                 y = float(line.split(',')[1])
-                ls_x.append(x)
-                ls_y.append(y)
+                # ls_x.append(x)
+                # ls_y.append(y)
+                p_traj.append(x)
+                p_traj.append(y)
             except:
                 continue
-        for k in range(0,len(ls_x)):
-            phi = math.atan2(ls_y[k]-pre_y,ls_x[k]-pre_x) - pre_phi
-            dis = math.sqrt(pow(ls_y[k]-pre_y,2) + pow(ls_x[k]-pre_x,2))
-            pre_x = ls_x[k]
-            pre_y = ls_y[k]
-            pre_phi = phi
-            if (round(phi,1) == 0.9):
-                phi = phi - 0.1
-            p_traj.append(round(ls_x[k],1))
-            p_traj.append(round(ls_y[k],1))
+        # for k in range(0,len(ls_x)):
+            # phi = math.atan2(ls_y[k]-pre_y,ls_x[k]-pre_x) - pre_phi
+            # dis = math.sqrt(pow(ls_y[k]-pre_y,2) + pow(ls_x[k]-pre_x,2))
+            # pre_x = ls_x[k]
+            # pre_y = ls_y[k]
+            # pre_phi = phi
+            # if (round(phi,1) == 0.9):
+            #     phi = phi - 0.1
+            # p_traj.append(round(ls_x[k],1))
+            # p_traj.append(round(ls_y[k],1))
         # print(p_traj)
         return p_traj
     def ConvertToRobotCoor():
