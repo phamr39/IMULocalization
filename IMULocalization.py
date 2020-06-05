@@ -209,12 +209,10 @@ class CommUART:
             if (list(set(p_traj) - set(pre_traj)) != []):
                 print(p_traj)
                 CommUART.UARTSend(p_traj)
-                print('3333333333333333')
+                # print('3333333333333333')
                 pre_traj = p_traj
             else:
-                print("No new trajectory detected ")
-                n = 'S'
-                serial_port.write(n.encode())
+                # print("No new trajectory detected ")
     def engine_test():
         while(1):
             CommUART.UARTReceive()
