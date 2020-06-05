@@ -213,6 +213,8 @@ class CommUART:
                 pre_traj = p_traj
             else:
                 # print("No new trajectory detected ")
+                time.sleep(1)
+
     def engine_test():
         while(1):
             CommUART.UARTReceive()
