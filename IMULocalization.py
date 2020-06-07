@@ -214,7 +214,7 @@ class CommUART:
                 # print('3333333333333333')
                 pre_traj = p_traj
                 # Sending end of tranmission byte
-                time.sleep(0.5)
+                # time.sleep(0.5)
                 print('Sending EOT byte...')
                 serial_port.write('S'.encode())
                 print('Transmission done')
