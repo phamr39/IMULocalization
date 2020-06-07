@@ -213,6 +213,8 @@ class CommUART:
                 CommUART.UARTSend(p_traj)
                 # print('3333333333333333')
                 pre_traj = p_traj
+                # Sending end of tranmission byte
+                serial_port.write('S'.encode())
             else:
                 # print("No new trajectory detected ")
                 time.sleep(1)
