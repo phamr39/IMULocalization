@@ -214,7 +214,9 @@ class CommUART:
                 # print('3333333333333333')
                 pre_traj = p_traj
                 # Sending end of tranmission byte
+                print('Sending EOT byte...')
                 serial_port.write('S'.encode())
+                print('Transmission done')
             else:
                 # print("No new trajectory detected ")
                 time.sleep(1)
